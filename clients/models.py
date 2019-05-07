@@ -17,7 +17,7 @@ class Client:
 
     @staticmethod     #es un metodo q se puede ejecutar sin ninguna istancia de clase
     def schema():     #no necesita self, porqe no nesesita una instancia 
-        return ["name", "company", "email", "position", "uid"]
+        return ['name', 'company', 'email', 'position', 'uid']
         
 
 

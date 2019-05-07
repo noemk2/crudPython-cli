@@ -2,7 +2,7 @@ import csv
 
 from clients.models import Client
 
-class CLientService:
+class ClientService:
 
     def __init__(self, table_name):
         self.table_name = table_name
