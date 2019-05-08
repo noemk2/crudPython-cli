@@ -34,19 +34,33 @@ def create(ctx, name, company, email, position):
     client_service.create_client(client)
 
 
-@click.command()
+@clients.command()
 @click.pass_context
-def list(ctx,):
+def list(ctx):
     """List all clients"""
-    pass
+    client_service= ClientService(ctx.obj['clients_table'])
 
-@click.command()
+    clients_list= client_service.list_clients()
+
+    click.echo('ID | NAME | COMPANY | EMAIL | POSITION')
+    click.echo('*'*100)
+
+    for client in clients_list:
+        uid=client['uid']
+        name=client['name']
+        company=client['company']
+        email=client['email']
+        position=client['position']
+        click.echo(f'{uid} | {name} | {company} | {email} | {position}')
+
+
+@clients.command()
 @click.pass_context
 def update(ctx, client_uid):
     """Update a clients"""
     pass
 
-@click.command()
+@clients.command()
 @click.pass_context
 def delete(ctx, client_uid):
     """Delete a new client """
