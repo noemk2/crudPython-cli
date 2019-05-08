@@ -8,6 +8,7 @@ def clients():
     """Manges the clients lifecycles"""
     pass
 
+
 @clients.command()
 @click.option('-n', '--name',
               type=str,
